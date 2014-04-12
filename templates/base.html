@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>My site</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/pygment_trac.css') }}">
+    
+</head>
+<body>
+    <h1><a href="{{ url_for("index") }}">My site</a></h1>
+{% block content %}
+    <p>Default content to be displayed</p>
+{% endblock content %}
+    <script src="{{ url_for('static', filename='javascripts/scale.fix.js') }}"></script>
+</body>
+</html>
