@@ -12,3 +12,4 @@ Let's say a portfolio has 1 week 95% VaR of $100 million. This means there is 5%
 
 
 ### How is VaR calculated?
+

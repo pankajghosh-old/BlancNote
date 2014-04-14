@@ -8,10 +8,26 @@
     
 </head>
 <body>
-    <h1><a href="{{ url_for("index") }}">My site</a></h1>
+    <div class="wrapper">
+      <header>
+        <h1><a href="{{ url_for("index") }}">Pankaj Ghosh</a></h1>
+        <p>Curioser and curioser..</p>
+        <ul>
+          <li><a href="http://www.blancnote.com">Missing <strong>Link</strong></a></li>
+          <li><a href="https://twitter.com/Rabbitholing">Follow me on <strong>Twitter</strong></a></li>
+          <li><a href="https://github.com/pankajghosh">Follow me on <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
 {% block content %}
     <p>Default content to be displayed</p>
 {% endblock content %}
+      </section>
+      <footer>
+        <p><small>Hosted on EC2, Built using Flask, MathJax &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
     <script src="{{ url_for('static', filename='javascripts/scale.fix.js') }}"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

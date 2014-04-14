@@ -1,6 +1,6 @@
-title: Hello World
+title: Sample Text Markdown
 date: 2012-03-04
-tags: [Finance, Valuation, Investment]
+tags: [Sample]
 
 GitHub Flavored Markdown
 ================================
@@ -40,7 +40,8 @@ Math is hard, let's go shopping
 
 In first grade I learned that 5 > 3 and 2 < 7. Maybe some arrows. 1 -> 2 -> 3. 9 <- 8 <- 7.
 
-Triangles man! a^2 + b^2 = c^2
+Here is an example MathJax inline rendering \\( 1/x^{2} \\), and here is a block rendering: 
+\\[ \frac{1}{n^{2}} \\]
 
 We all like making lists
 ------------------------
