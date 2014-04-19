@@ -4,11 +4,7 @@ tags: [CleanCode]
 
 #### Decoupling high-level use-cases/policy modules and low-level/implementation-detail modules through abstractions.
 
-<work in progress...>
-
 Watch the original episode [here][1]
-
-
 
 Let's start with an example, shall we?  
 We are building a social application, Sociale (Ha!), which posts statuses to all of user's connected social networks.
@@ -36,3 +32,4 @@ We would like to decouple for two reasons
 
 
 [1]: http://cleancoders.com/episode/clean-code-episode-13/show
+[2]: http://www.teradatatips.com/

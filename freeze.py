@@ -4,11 +4,13 @@ from flask_frozen import Freezer
 
 from sitebuilder import app
 from s3_uploader import s3_uploader
+import shutil
 
 
 def freeze():
+    if os.path.exists(os.path.join(os.getcwd(), 'build')):
+        shutil.rmtree('build')
     Freezer(app).freeze()
-    
 
 def set_aws_credentials():
     import ConfigParser
@@ -21,7 +23,7 @@ def upload_to_server():
     s3_uploader(src_folder_name='build', bucket_name='blancnote.com')
 
 def execute():
-#     freeze()
+    freeze()
     set_aws_credentials()
     upload_to_server()
 
