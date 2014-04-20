@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>My site</title>
+    <title>BlancNote</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/styles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/pygment_trac.css') }}">
     
@@ -24,14 +24,15 @@
 {% endblock content %}
       </section>
       <footer>
-        <p><small>Hosted on EC2, Built using Flask, MathJax &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <p><small>Hosted on S3, Built using Flask, MathJax, yUML</small></p>
+        <p><small>Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
     <script src="{{ url_for('static', filename='javascripts/scale.fix.js') }}"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/javascript">
 /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-var disqus_shortname = 'BlancNote'; // required: replace example with your forum shortname
+var disqus_shortname = 'pankajghosh'; // required: replace example with your forum shortname
 
 /* * * DON'T EDIT BELOW THIS LINE * * */
 (function () {
