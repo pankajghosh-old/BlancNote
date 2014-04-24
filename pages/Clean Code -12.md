@@ -2,7 +2,7 @@ title: Interface Segregation Principle
 date: 2014-04-22
 tags: [CleanCode]
 
-#### TO add
+#### Don't depend on things you don't need.
 
 Watch the original episode [here][1]
 

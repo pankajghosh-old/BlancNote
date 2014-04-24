@@ -8,6 +8,7 @@
             <a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}</a>
         {% endfor %}
     {% endif %}
+    <!-- {{ page.html|truncate(300)|safe }}-->
     </li>
 {% else %}
     <li>No page.</li>
