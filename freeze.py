@@ -22,7 +22,15 @@ def set_aws_credentials():
 def upload_to_server():
     s3_uploader(src_folder_name='build', bucket_name='blancnote.com')
 
+def create_sitemap():
+    import subprocess
+    process = subprocess.Popen(['python', 'gensitemap.py'], stdout=subprocess.PIPE)
+    out, _ = process.communicate()
+    with open('static/sitemap.xml', 'w') as f:
+        f.write(out)
+
 def execute():
+#     create_sitemap()
     freeze()
     set_aws_credentials()
     upload_to_server()
