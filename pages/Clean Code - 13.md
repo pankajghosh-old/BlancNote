@@ -60,12 +60,12 @@ Gateways are now *plugins* to our application, which would look like this:
 -->
 ![](http://yuml.me/diagram/plain;/class/[Sociale]PostStatus(\)%20-.-%3E%20[%3C%3CSocialNetworkInteractor%3E%3E;PostStatus(\)],%20[%3C%3CSocialNetworkInteractor%3E%3E;PostStatus(\)]%5E-.-[FacebookGateway%7C+PostStatus(\)],[%3C%3CSocialNetworkInteractor%3E%3E;PostStatus(\)]%5E-.-[TwitterGateway%7C+PostStatus(\)],[%3C%3CSocialNetworkInteractor%3E%3E;PostStatus(\)]%5E-.-[AnotherSocialNetworkGateway%7C+PostStatus(\)])
 
-**Gateways now have a compile time dependency on the interface, which is in opposite direction to run-time dependency of Sociale Application on the gateways. 
-That is Dependency Inversion Principle (DIP).**
+Gateways now have a compile time dependency on the interface, which is **in opposite direction** to run-time dependency of Sociale Application on the gateways. 
+**That is Dependency Inversion Principle (DIP).**
 
-DIP helps us create boundaries between applications.
-Team developing Sociale application can release code updates to code as long as the interface does not change.
-Teams developing gateways, aka plugins, can release code as long as they implement the interface.
+DIP helps us create boundaries between components, between teams (that is a good thing if done right).  
+Team developing Sociale application can release code updates to code as long as the interface does not change.  
+Teams developing gateways, aka plugins, can release code as long as they implement the interface.  
 
 
 [1]: http://cleancoders.com/episode/clean-code-episode-13/show

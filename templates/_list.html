@@ -1,5 +1,6 @@
 <ul>
 {% for page in pages %}
+	{% if 'Draft' not in page.meta.tags %}
     <li>
         <a href="{{ url_for("page", path=page.path) }}#disqus_thread">{{ page.title }}</a>
     {% if page.meta.tags|length %}
@@ -10,6 +11,7 @@
     {% endif %}
     <!-- {{ page.html|truncate(300)|safe }}-->
     </li>
+    {% endif %}
 {% else %}
     <li>No page.</li>
 {% endfor %}
