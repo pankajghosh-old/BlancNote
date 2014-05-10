@@ -19,7 +19,6 @@ def set_aws_credentials():
     Config.read("aws.config")
     os.environ['AWS_ACCESS_KEY_ID'] = Config.get(section='aws', option='AWS_ACCESS_KEY_ID')
     os.environ['AWS_SECRET_ACCESS_KEY'] = Config.get(section='aws', option='AWS_SECRET_ACCESS_KEY')
-    os.environ['BOTO_CONFIG'] =r'C:\Dev\workspace\BlancNote\boto.config'
     
 def upload_to_server():
     cmd_line = "aws s3 sync %s s3://%s"%('build', 'blancnote.com')
