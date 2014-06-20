@@ -2,7 +2,7 @@ title: About this blog
 date: 2014-05-08
 tags: [Sample]
 
-#### "One day I will find the right words, and they will be simple." - Jack Kerouac
+##### Man cannot remake himself without suffering, for he is both the marble and the sculptor -  Alexis Carrel
 
-and more...
+This blog is a medium for me to validate my understanding and my learning process.
 
