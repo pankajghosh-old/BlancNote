@@ -6,3 +6,11 @@ tags: [Finance, Valuation]
 
 *This post is a work-in-progress*
 
+What is normal distribution?
+
+What is lognormal distribution?
+
+Relationship between normal and lognormal distribution
+
+Modeling stock returns
+	Returns can be modeled as independant random variables
