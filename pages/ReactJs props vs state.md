@@ -1,4 +1,4 @@
-title: Why lognormal returns?
+title: React JS: props vs state
 date: 2014-09-18
 tags: [Untagged]
 
@@ -62,3 +62,39 @@ React.renderComponent(
   document.body
   );
 ```
+
+We will try to add a small update to above component before we move on to more complex scenario.
+Currently, behavior of the button is that is stays selected once done. 
+We would like the button's selection to act like toggle.
+
+
+```JSX
+var Button = React.createClass({
+  getInitialState: function() {
+    return {
+      isSelected:false
+    };
+  },
+  render: function() {
+    var classes = React.addons.classSet({
+      'btn': true,
+      'btn-default': ! this.state.isSelected,
+      'btn-success': this.state.isSelected,
+    });
+    return (
+      <a className={classes} onClick={this.handleClick}>button 1</a>
+      );
+  },
+  handleClick: function(e){
+    this.setState({isSelected:! this.state.isSelected})
+  }
+
+});
+
+React.renderComponent(
+  <Button/>,
+  document.body
+  );
+```
+
+To display interactivity between components, let's create a dynamic list of boxes
