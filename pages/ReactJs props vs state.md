@@ -1,4 +1,4 @@
-title: React JS props vs state
+title: "ReactJS: props vs state"
 date: 2014-09-18
 tags: [Untagged]
 
@@ -10,14 +10,11 @@ tags: [Untagged]
 
 [Why React?](http://facebook.github.io/react/docs/why-react.html)
 
-React lets you design interfaces using reusable components and encourages component hierarchy.As you are creating the components, it becomes imperative to decide how they interact with each other.
+React lets you design interfaces using reusable components and encourages component hierarchy. And with increasing complexity of UI, designing how components interact with each other becomes imperative.
 
-There are 2 basic rules to follow:
+Let's jump straight into it...
 
- * Component's state should be reserved for user interaction. If your webpage (or a component) is static, it should not have any state.
- * Data flows only in one direction.
-
-Let's take an example of a button
+Below is an example of a `Button` class with just one method: `render()`. `React.renderComponent()` replaces the DOM node, in this case `document.body`, with an instance of `Button` component.
 
     var Button = React.createClass({
       render: function() {
@@ -31,8 +28,18 @@ Let's take an example of a button
       document.body
       );
 
-We will now try to add interactivity to this component. If user clicks this button, it should show as selected.
-We need to to change the class of this component on click. From Rule 1, it is time we add state to this component.
+Pretty simple, huh?   
+Though that is one boring button, so lets add user interactivity to it.   
+If user clicks this button, it should show as selected.
+
+We need to to change the class of this component (from `btn-default` to `btn-success`) on a user click. It is time we add state to this component.   
+
+React provides us with 2 main methods to handle state of any component:
+
+ * `getInitialState`: This method, as the name suggests, is responsible for setting up initial state of the component. This method is guarenteed to be executed once during a component's lifecycle.
+ * `setState`: Use this method to modify state of the component. Leave it to React to re-render the component whenever state gets updated, as we shall see below.
+
+We add a plain old event handler `handleClick` which modifies the state of the component.
 
     var Button = React.createClass({
       getInitialState: function() {
@@ -177,3 +184,9 @@ The problem we would now try to solve is that we want to deselect other buttons 
       <ButtonList count={5}/>,
       document.body
       );
+
+There are 3 basic guidelines, which I have found helpful, while creating components:
+
+ * **Component's `state` should be reserved for user interaction**: If your webpage (or a component) is static, it should not have any state.
+ * **A component modifies another component via its `props`**: `props` on the other hand are immutable, a component's parent owns them. In a lot of cases, parent's `state` would include child components' `props`.
+ * Data flows only in one direction:
