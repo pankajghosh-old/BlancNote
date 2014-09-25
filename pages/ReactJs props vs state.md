@@ -1,6 +1,6 @@
 title: "ReactJS: props vs state"
 date: 2014-09-18
-tags: [Untagged]
+tags: [ReactJS]
 
 *This post is a work-in-progress*
 
@@ -29,7 +29,7 @@ Below is an example of a `Button` class with just one method: `render()`. `React
       );
 
 Pretty simple, huh?   
-Though that is one boring button, so lets add user interactivity to it.   
+Though that is one boring button, so lets make it user interactive.   
 If user clicks this button, it should show as selected.
 
 We need to to change the class of this component (from `btn-default` to `btn-success`) on a user click. It is time we add state to this component.   
@@ -43,9 +43,9 @@ We add a plain old event handler `handleClick` which modifies the state of the c
 
     var Button = React.createClass({
       getInitialState: function() {
-      	return {
-      		button_class:"btn btn-default"
-      	};
+        return {
+          button_class:"btn btn-default"
+        };
       },
       render: function() {
         return (
@@ -53,9 +53,8 @@ We add a plain old event handler `handleClick` which modifies the state of the c
           );
       },
       handleClick: function(e){
-      	this.setState({button_class:"btn btn-success"})
+        this.setState({button_class:"btn btn-success"})
       }
-
     });
 
     React.renderComponent(
@@ -63,10 +62,11 @@ We add a plain old event handler `handleClick` which modifies the state of the c
       document.body
       );
 
-We will try to add a small update to above component before we move on to more complex scenario.
-Currently, behavior of the button is that is stays selected once done. 
-We would like the button's selection to act like toggle.
+`Button` component's `className` is now dynamic and changes with the state `button_class` of the component.  
+This button stays selected once clicked, we want the selection state to toggle with user click.
 
+React offers a utility function `classSet` ([read about it here](http://facebook.github.io/react/docs/class-name-manipulation.html)) to manipulate `className` of any component.
+We have changed the state of the component to `isSelected` which gets toggled on event `onClick` cascading to a change in class of the component itself.
 
     var Button = React.createClass({
       getInitialState: function() {
@@ -95,7 +95,7 @@ We would like the button's selection to act like toggle.
       document.body
       );
 
-To display interactivity between components, let's create a dynamic list of boxes.
+To display interactivity between components, we would need more than one component so let's create a list of buttons. `ButtonList` passes a prop `index` to each `Button` and now we have five buttons each with different text and each responding to click events by themselves. `ButtonList` here is no more than a container for the list of 5 `Button` instances.
 
     var Button = React.createClass({
       getInitialState: function() {
@@ -138,7 +138,6 @@ To display interactivity between components, let's create a dynamic list of boxe
       <ButtonList count={5}/>,
       document.body
       );
-
 
 The problem we would now try to solve is that we want to deselect other buttons as buttons are clicked.
 
