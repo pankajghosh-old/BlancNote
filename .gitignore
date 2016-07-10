@@ -1,4 +1,5 @@
 /build
 /aws.config
+.idea/
 
 *.pyc
